@@ -20,9 +20,9 @@ export function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<DetectionPage />} />
-        <Route path="/estimacion" element={<EstimationPage />} />
+        <Route path="/estimation" element={<EstimationPage />} />
         <Route
-          path="/temporalidad"
+          path="/temporal-orientation"
           element={
             <StepGuard step={3}>
               <TemporalOrientationPage />
@@ -30,7 +30,7 @@ export function AppRouter() {
           }
         />
         <Route
-          path="/emocion-principal"
+          path="/primary-emotion"
           element={
             <StepGuard step={4}>
               <PrimaryEmotionPage />
@@ -38,7 +38,7 @@ export function AppRouter() {
           }
         />
         <Route
-          path="/sentimientos"
+          path="/related-feelings"
           element={
             <StepGuard step={5}>
               <RelatedFeelingsPage />
@@ -46,7 +46,7 @@ export function AppRouter() {
           }
         />
         <Route
-          path="/reconocimiento"
+          path="/recognition"
           element={
             <StepGuard step={6}>
               <RecognitionPage />
@@ -54,7 +54,7 @@ export function AppRouter() {
           }
         />
         <Route
-          path="/atencion"
+          path="/attention"
           element={
             <StepGuard step={7}>
               <AttentionCheckPage />
@@ -62,7 +62,7 @@ export function AppRouter() {
           }
         />
         <Route
-          path="/pausa"
+          path="/pause"
           element={
             <StepGuard step={8}>
               <MicroInterventionPage />
@@ -70,7 +70,7 @@ export function AppRouter() {
           }
         />
         <Route
-          path="/intervencion"
+          path="/intervention"
           element={
             <StepGuard step={9}>
               <InterventionPage />
@@ -78,7 +78,7 @@ export function AppRouter() {
           }
         />
         <Route
-          path="/intervencion-pausa"
+          path="/intervention-pause"
           element={
             <StepGuard step={10}>
               <InterventionTimerPage />
@@ -86,7 +86,7 @@ export function AppRouter() {
           }
         />
         <Route
-          path="/evaluacion"
+          path="/evaluation"
           element={
             <StepGuard step={11}>
               <EvaluationPage />
@@ -94,14 +94,14 @@ export function AppRouter() {
           }
         />
         <Route
-          path="/evaluacion-feedback"
+          path="/evaluation-feedback"
           element={
             <StepGuard step={12}>
               <EvaluationFeedbackPage />
             </StepGuard>
           }
         />
-        <Route path="/historial" element={<HistoryPage />} />
+        <Route path="/history" element={<HistoryPage />} />
         <Route path="/inicio" element={<Navigate replace to="/" />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

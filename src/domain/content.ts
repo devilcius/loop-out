@@ -3,17 +3,17 @@ import { i18n } from '../i18n'
 
 export const stepPathByNumber: Record<number, string> = {
   1: '/',
-  2: '/estimacion',
-  3: '/temporalidad',
-  4: '/emocion-principal',
-  5: '/sentimientos',
-  6: '/reconocimiento',
-  7: '/atencion',
-  8: '/pausa',
-  9: '/intervencion',
-  10: '/intervencion-pausa',
-  11: '/evaluacion',
-  12: '/evaluacion-feedback',
+  2: '/estimation',
+  3: '/temporal-orientation',
+  4: '/primary-emotion',
+  5: '/related-feelings',
+  6: '/recognition',
+  7: '/attention',
+  8: '/pause',
+  9: '/intervention',
+  10: '/intervention-pause',
+  11: '/evaluation',
+  12: '/evaluation-feedback',
 }
 
 export const intensityLabelByLevel: Record<number, string> = {

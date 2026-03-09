@@ -25,7 +25,7 @@ export function ScreenShell({ title, subtitle, headerTop, showHistoryLink = fals
 
       {showHistoryLink ? (
         <footer className="screen-footer">
-          <Link to="/historial" className="text-link">
+          <Link to="/history" className="text-link">
             {i18n.components.screenShell.historyLink}
           </Link>
         </footer>
