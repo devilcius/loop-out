@@ -157,7 +157,7 @@ export const es = {
       restartFlow: "Empezar de nuevo",
     },
     estimation: {
-      title: "¿Cómo valoras la intensidad del ruido?",
+      title: "¿Cómo valoras la intensidad del ruido mental?",
     },
     temporalOrientation: {
       title: "¿Este pensamiento gira en torno al pasado o al futuro?",
@@ -193,9 +193,9 @@ export const es = {
       title: "Pausa breve de recuperación",
       instructionByNotificationAnswer: {
         yes: "Antes de continuar, vamos a recuperar tu atención. Activa el modo No molestar durante unos minutos o deja el móvil boca abajo.",
-        no: "Perfecto. Mantén el móvil a un lado unos segundos, hasta que suene la campana",
+        no: "Perfecto. Al hacer clic en el botón empezará la pausa.",
       } as Record<NotificationOpenedAnswer, string>,
-      pauseSetup: "Al hacer clic en el botón empezará la pausa.",
+      pauseSetup: "Mantén el móvil a un lado unos segundos, hasta que suene la campana",
       timer: (seconds: number) => `Respira con calma... ${seconds}s`,
       startPause: "Iniciar pausa",
       waitForEndBell: "Espera la campana de cierre",
