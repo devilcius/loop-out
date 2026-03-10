@@ -199,7 +199,7 @@ export const es = {
       } as Record<NotificationOpenedAnswer, string>,
       pauseSetup: "Mantén el móvil a un lado unos segundos, hasta que suene la campana",
       timer: (seconds: number) => `Respira con calma... ${seconds}s`,
-      startPause: "Iniciar pausa",
+      startPause: "⌛ Iniciar pausa",
       waitForEndBell: "Espera la campana de cierre",
     },
     intervention: {

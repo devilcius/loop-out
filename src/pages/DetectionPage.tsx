@@ -26,6 +26,7 @@ export function DetectionPage() {
 
   return (
     <ScreenShell
+      showHomeLogoLink={false}
       title={i18n.pages.detection.title}
       subtitle={i18n.pages.detection.subtitle}
       showHistoryLink

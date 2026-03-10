@@ -4,15 +4,7 @@ import { i18n } from '../i18n'
 
 export function AboutPage() {
   return (
-    <ScreenShell
-      title={i18n.pages.about.title}
-      subtitle={i18n.pages.about.subtitle}
-      headerTop={
-        <Link className="screen-home-logo-link" to="/" aria-label={i18n.common.backToStart}>
-          <img className="screen-home-logo" src="/img/logo.png" alt={i18n.app.logoAlt} />
-        </Link>
-      }
-    >
+    <ScreenShell title={i18n.pages.about.title} subtitle={i18n.pages.about.subtitle}>
       <article className="about-content">
         <section className="about-section" aria-labelledby="about-therapeutic-principles">
           <h2 id="about-therapeutic-principles">{i18n.pages.about.therapeuticPrinciples.title}</h2>

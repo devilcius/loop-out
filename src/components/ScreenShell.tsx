@@ -7,6 +7,7 @@ interface ScreenShellProps {
   title?: string
   subtitle?: string
   headerTop?: ReactNode
+  showHomeLogoLink?: boolean
   showHistoryLink?: boolean
   showAboutLink?: boolean
   children: ReactNode
@@ -16,6 +17,7 @@ export function ScreenShell({
   title,
   subtitle,
   headerTop,
+  showHomeLogoLink = true,
   showHistoryLink = false,
   showAboutLink = false,
   children,
@@ -26,6 +28,11 @@ export function ScreenShell({
     <main className="screen">
       <div className="screen-card">
         <header className="screen-header">
+          {showHomeLogoLink ? (
+            <Link className="screen-home-logo-link" to="/" aria-label={i18n.common.backToStart}>
+              <img className="screen-home-logo" src="/img/logo.png" alt={i18n.app.logoAlt} />
+            </Link>
+          ) : null}
           {headerTop}
           {title ? <h1>{title}</h1> : null}
           {subtitle ? <RichText html={subtitle} /> : null}
