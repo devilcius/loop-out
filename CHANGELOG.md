@@ -2,10 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.1] - 2026-03-10
+
+### Navigation
+- Adds home logo to every page
+
+### UX
+- Adds sand clock icon to "pause" button
+
 ## [0.5.0] - 2026-03-10
 
 ### About page
 - New about page
+
+### UI/UX
 - Navigation improved
 - Prettier links
 
