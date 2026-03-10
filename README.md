@@ -12,6 +12,8 @@ The app walks users through a sequence of steps:
 
 Session progress is persisted locally in the browser and can be resumed. A lightweight local history of completed attempts is also stored on-device.
 
+Official site: https://loop-out.com
+
 ## Tech Stack
 
 - React 19

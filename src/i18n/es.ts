@@ -151,7 +151,7 @@ export const es = {
   },
   pages: {
     detection: {
-      title: "¿Estás siendo bombardeado?",
+      title: "¿Necesitas un respiro?",
       subtitle: "Vamos paso a paso.",
       continueWhereLeft: "Continuar donde lo dejaste",
       restartFlow: "Empezar de nuevo",
