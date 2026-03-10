@@ -29,6 +29,7 @@ export function DetectionPage() {
       title={i18n.pages.detection.title}
       subtitle={i18n.pages.detection.subtitle}
       showHistoryLink
+      showAboutLink
       headerTop={
         <div className="app-hero">
           <h2 className="app-title">{i18n.app.name}</h2>

@@ -108,6 +108,14 @@ body {
   text-align: center;
 }
 
+.screen-footer-links {
+  align-items: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: center;
+}
+
 .stack {
   display: grid;
   gap: 0.8rem;
@@ -150,6 +158,29 @@ button,
 
 .text-link {
   color: color-mix(in srgb, var(--brand-deep) 82%, black);
+  display: inline-block;
+  font-weight: 500;
+  padding-bottom: 0.12rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.text-link::after {
+  background: color-mix(in srgb, var(--brand-teal) 42%, var(--brand-deep));
+  bottom: -0.05rem;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0.45);
+  transform-origin: left;
+  transition: transform 140ms ease;
+  width: 100%;
+}
+
+.text-link:hover::after,
+.text-link:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .option-button {
@@ -270,6 +301,67 @@ button,
   margin-bottom: 0;
 }
 
+.about-content {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about-section {
+  background: color-mix(in srgb, var(--brand-teal) 7%, white);
+  border: 1px solid color-mix(in srgb, var(--brand-teal) 20%, var(--border-soft));
+  border-radius: 0.9rem;
+  padding: 0.95rem;
+}
+
+.about-section h2 {
+  color: var(--brand-deep);
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+.about-section p {
+  color: color-mix(in srgb, var(--brand-deep) 76%, #4a544d);
+  margin: 0.6rem 0 0;
+}
+
+.about-section ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.about-section li {
+  color: color-mix(in srgb, var(--brand-deep) 82%, #414a44);
+  margin-top: 0.3rem;
+}
+
+.about-section a {
+  color: color-mix(in srgb, var(--brand-deep) 82%, black);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--brand-teal) 45%, transparent);
+  transition: border-color 140ms ease, color 140ms ease;
+}
+
+.about-section a:hover,
+.about-section a:focus-visible {
+  border-bottom-color: color-mix(in srgb, var(--brand-teal) 70%, var(--brand-deep));
+  color: color-mix(in srgb, var(--brand-deep) 88%, black);
+}
+
+.screen-home-logo-link {
+  border-radius: 0.75rem;
+  display: inline-flex;
+  margin: 0 0 0.55rem;
+  width: fit-content;
+}
+
+.screen-home-logo {
+  display: block;
+  height: auto;
+  width: 52px;
+}
+
 .as-link {
   display: inline-block;
   text-align: center;
@@ -282,7 +374,10 @@ button:disabled {
 }
 
 button:focus-visible,
-.as-link:focus-visible {
+.as-link:focus-visible,
+.text-link:focus-visible,
+.screen-home-logo-link:focus-visible,
+.about-section a:focus-visible {
   outline: 2px solid var(--brand-teal);
   outline-offset: 2px;
 }

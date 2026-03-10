@@ -42,6 +42,8 @@ export const es = {
     },
     screenShell: {
       historyLink: "Ver historial",
+      aboutLink: "Sobre LOOP-OUT",
+      footerNavAriaLabel: "Navegación secundaria",
     },
   },
   domain: {
@@ -249,6 +251,47 @@ export const es = {
       primaryEmotionLabel: "Emoción principal:",
       relatedFeelingsLabel: "Sentimientos:",
       interventionsLabel: "Intervenciones:",
+    },
+    about: {
+      title: "Sobre LOOP-OUT",
+      subtitle: "Una herramienta breve para recuperar presencia cuando aparece un bucle mental.",
+      therapeuticPrinciples: {
+        title: "Principios terapéuticos",
+        intro: "LOOP-OUT está diseñado como una herramienta simple de autorregulación para ayudarte a:",
+        items: [
+          "detectar bucles mentales",
+          "nombrar lo que está ocurriendo",
+          "recuperar la atención",
+          "elegir una intervención breve de anclaje",
+          "observar si cambia la intensidad del bucle",
+        ],
+        supportNotice:
+          "No es psicoterapia ni una herramienta de diagnóstico. Es un apoyo puntual y no sustituye la atención profesional en salud mental.",
+      },
+      privacy: {
+        title: "Privacidad",
+        intro: "La información se maneja con un enfoque de mínima exposición:",
+        items: [
+          "los datos se guardan solo en tu propio navegador",
+          "no necesitas crear una cuenta",
+          "no se envía tu historial personal a ningún servidor",
+        ],
+        closing: "El objetivo es reducir la exposición de datos que no sea estrictamente necesaria.",
+      },
+      openSource: {
+        title: "Código abierto",
+        intro:
+          "El proyecto es abierto y orientado a ser inspeccionable. Esta decisión busca sostener tres principios:",
+        values: ["transparencia", "confianza", "mejora colaborativa"],
+        repositoryLabel: "Repositorio: github.com/devilcius/loop-out",
+        repositoryUrl: "https://github.com/devilcius/loop-out/",
+      },
+      acknowledgements: {
+        title: "Agradecimientos",
+        copy: "Gracias a Psicología Crisálida por su acompañamiento y aportes al enfoque de la herramienta.",
+        websiteLabel: "psicologiacrisalida.com",
+        websiteUrl: "https://psicologiacrisalida.com",
+      },
     },
     notFound: {
       title: "Esta ruta no existe",

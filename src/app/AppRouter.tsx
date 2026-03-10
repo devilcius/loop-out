@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { StepGuard } from '../components/StepGuard'
+import { AboutPage } from '../pages/AboutPage'
 import { AttentionCheckPage } from '../pages/AttentionCheckPage'
 import { DetectionPage } from '../pages/DetectionPage'
 import { EstimationPage } from '../pages/EstimationPage'
@@ -101,6 +102,7 @@ export function AppRouter() {
             </StepGuard>
           }
         />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/inicio" element={<Navigate replace to="/" />} />
         <Route path="*" element={<NotFoundPage />} />

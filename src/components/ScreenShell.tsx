@@ -8,10 +8,20 @@ interface ScreenShellProps {
   subtitle?: string
   headerTop?: ReactNode
   showHistoryLink?: boolean
+  showAboutLink?: boolean
   children: ReactNode
 }
 
-export function ScreenShell({ title, subtitle, headerTop, showHistoryLink = false, children }: ScreenShellProps) {
+export function ScreenShell({
+  title,
+  subtitle,
+  headerTop,
+  showHistoryLink = false,
+  showAboutLink = false,
+  children,
+}: ScreenShellProps) {
+  const shouldShowFooter = showHistoryLink || showAboutLink
+
   return (
     <main className="screen">
       <div className="screen-card">
@@ -23,11 +33,20 @@ export function ScreenShell({ title, subtitle, headerTop, showHistoryLink = fals
         <section className="screen-content">{children}</section>
       </div>
 
-      {showHistoryLink ? (
+      {shouldShowFooter ? (
         <footer className="screen-footer">
-          <Link to="/history" className="text-link">
-            {i18n.components.screenShell.historyLink}
-          </Link>
+          <nav className="screen-footer-links" aria-label={i18n.components.screenShell.footerNavAriaLabel}>
+            {showHistoryLink ? (
+              <Link to="/history" className="text-link">
+                {i18n.components.screenShell.historyLink}
+              </Link>
+            ) : null}
+            {showAboutLink ? (
+              <Link to="/about" className="text-link">
+                {i18n.components.screenShell.aboutLink}
+              </Link>
+            ) : null}
+          </nav>
         </footer>
       ) : null}
     </main>

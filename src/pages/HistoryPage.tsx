@@ -9,7 +9,15 @@ export function HistoryPage() {
   const { attemptsHistory } = useSessionContext()
 
   return (
-    <ScreenShell title={i18n.pages.history.title} subtitle={i18n.pages.history.subtitle}>
+    <ScreenShell
+      title={i18n.pages.history.title}
+      subtitle={i18n.pages.history.subtitle}
+      headerTop={
+        <Link className="screen-home-logo-link" to="/" aria-label={i18n.common.backToStart}>
+          <img className="screen-home-logo" src="/img/logo.png" alt={i18n.app.logoAlt} />
+        </Link>
+      }
+    >
       <div className="stack">
         {attemptsHistory.length === 0 ? (
           <RichText className="summary-text" html={i18n.pages.history.empty} />
