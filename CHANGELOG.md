@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.0] - 2026-03-12
+
+### Testing
+- Adds unit, integration and e2e test suite
+
+### UI/UX
+- Better phrasing
+- Progress bar when timer is running
+
 ## [0.5.1] - 2026-03-10
 
 ### Navigation
