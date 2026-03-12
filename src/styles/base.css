@@ -150,6 +150,33 @@ button,
   color: var(--brand-deep);
 }
 
+.progress-button {
+  background: color-mix(in srgb, var(--brand-deep) 54%, #8a959f);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-button-label {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.progress-button::before {
+  background: var(--brand-deep);
+  content: '';
+  inset: 0 auto 0 0;
+  position: absolute;
+  transition: width 260ms linear;
+  width: var(--button-progress, 0%);
+  z-index: 0;
+}
+
+.progress-button:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
 .text-button {
   background: transparent;
   color: var(--brand-deep);

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RichText } from '../components/RichText'
 import { ScreenShell } from '../components/ScreenShell'
@@ -18,6 +18,7 @@ export function MicroInterventionPage() {
   const endBellRef = useRef<HTMLAudioElement | null>(null)
   const didPlayEndBellRef = useRef(false)
   const status: PauseStatus = !hasStarted ? 'idle' : remainingSeconds === 0 ? 'finished' : 'running'
+  const completionPercent = status === 'idle' ? 0 : Math.round(((PAUSE_SECONDS - remainingSeconds) / PAUSE_SECONDS) * 100)
 
   useEffect(() => {
     if (!hasStarted || remainingSeconds === 0) {
@@ -71,14 +72,17 @@ export function MicroInterventionPage() {
         ) : null}
 
         <button
-          className="primary-button"
+          className="primary-button progress-button"
           disabled={status !== 'finished'}
+          style={{ '--button-progress': `${completionPercent}%` } as CSSProperties}
           onClick={() => {
             goToStep(9)
             navigate(stepPathByNumber[9])
           }}
         >
-          {status === 'finished' ? i18n.common.continue : i18n.pages.microIntervention.waitForEndBell}
+          <span className="progress-button-label">
+            {status === 'finished' ? i18n.common.continue : i18n.pages.microIntervention.waitForEndBell}
+          </span>
         </button>
         <button className="secondary-button" onClick={() => navigate(stepPathByNumber[7])}>
           {i18n.common.back}

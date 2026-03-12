@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { Modal } from '../components/Modal'
 import { RichText } from '../components/RichText'
@@ -39,6 +39,10 @@ export function InterventionTimerPage() {
     return interventionContent[selectedIntervention]
   }, [selectedIntervention])
   const status: TimerStatus = !hasStarted ? 'idle' : remainingSeconds === 0 ? 'finished' : 'running'
+  const completionPercent =
+    status === 'idle'
+      ? 0
+      : Math.round(((interventionData.durationSeconds - remainingSeconds) / interventionData.durationSeconds) * 100)
 
   useEffect(() => {
     if (!hasStarted || remainingSeconds === 0) {
@@ -135,15 +139,18 @@ export function InterventionTimerPage() {
             </button>
           ) : (
             <button
-              className="primary-button"
+              className="primary-button progress-button"
               disabled={status !== 'finished'}
+              style={{ '--button-progress': `${completionPercent}%` } as CSSProperties}
               onClick={() => {
                 markInterventionReady()
                 goToStep(11)
                 navigate(stepPathByNumber[11])
               }}
             >
-              {status === 'finished' ? i18n.pages.interventionTimer.goToEvaluation : i18n.pages.interventionTimer.waitForEndBell}
+              <span className="progress-button-label">
+                {status === 'finished' ? i18n.pages.interventionTimer.goToEvaluation : i18n.pages.interventionTimer.waitForEndBell}
+              </span>
             </button>
           )}
 
