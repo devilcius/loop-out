@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+
+## [0.9.1] - 2026-03-12
+
+### Sanity check
+- Adds guard before calculation
+
 ## [0.9.0] - 2026-03-12
 
 ### Testing
