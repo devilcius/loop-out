@@ -189,7 +189,7 @@ export const es = {
     },
     attentionCheck: {
       title:
-        "Desde que abriste esta aplicación, ¿te ha llegado alguna notificación al móvil? ¿La has abierto?",
+        "Desde que abriste esta aplicación, ¿has atendido alguna notificación del móvil?",
     },
     microIntervention: {
       title: "Pausa breve de recuperación",
