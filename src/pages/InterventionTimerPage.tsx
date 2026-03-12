@@ -39,10 +39,6 @@ export function InterventionTimerPage() {
     return interventionContent[selectedIntervention]
   }, [selectedIntervention])
   const status: TimerStatus = !hasStarted ? 'idle' : remainingSeconds === 0 ? 'finished' : 'running'
-  const completionPercent =
-    status === 'idle'
-      ? 0
-      : Math.round(((interventionData.durationSeconds - remainingSeconds) / interventionData.durationSeconds) * 100)
 
   useEffect(() => {
     if (!hasStarted || remainingSeconds === 0) {
@@ -66,6 +62,11 @@ export function InterventionTimerPage() {
   if (!interventionData) {
     return <Navigate to={stepPathByNumber[9]} replace />
   }
+
+  const completionPercent =
+    status === 'idle'
+      ? 0
+      : Math.round(((interventionData.durationSeconds - remainingSeconds) / interventionData.durationSeconds) * 100)
 
   const openInfoModal = () => {
     const nextParams = new URLSearchParams(location.search)
