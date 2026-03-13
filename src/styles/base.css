@@ -496,6 +496,41 @@ button:focus-visible,
   margin-top: 0.35rem;
 }
 
+.install-notice {
+  background: color-mix(in srgb, var(--bg-card) 94%, white);
+  border-top: 1px solid color-mix(in srgb, var(--brand-teal) 35%, var(--border-soft));
+  bottom: 0;
+  box-shadow: 0 -10px 24px rgb(0 0 0 / 12%);
+  left: 0;
+  padding: 0.95rem 1rem calc(0.9rem + env(safe-area-inset-bottom));
+  position: fixed;
+  right: 0;
+  z-index: 1200;
+}
+
+.install-notice-title {
+  color: color-mix(in srgb, var(--brand-deep) 92%, black);
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.install-notice-text {
+  color: color-mix(in srgb, var(--brand-deep) 74%, #4b5550);
+  font-size: 0.94rem;
+  margin: 0.35rem 0 0;
+}
+
+.install-notice-actions {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.install-notice-button {
+  padding: 0.72rem 0.92rem;
+}
+
 @media (min-width: 700px) {
   .screen {
     padding: 2rem;
@@ -507,5 +542,15 @@ button:focus-visible,
 
   .option-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .install-notice {
+    border: 1px solid color-mix(in srgb, var(--brand-teal) 35%, var(--border-soft));
+    border-radius: 1rem;
+    bottom: 1rem;
+    left: auto;
+    max-width: 560px;
+    padding: 0.95rem;
+    right: 1rem;
   }
 }
