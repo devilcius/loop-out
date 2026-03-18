@@ -18,7 +18,16 @@ export function TemporalOrientationPage() {
   return (
     <ScreenShell
       title={i18n.pages.temporalOrientation.title}
-      headerTop={<img className="temporalidad-image" src="/img/temporalidad.png" alt={i18n.app.temporalityImageAlt} />}
+      headerTop={
+        <img
+          className="temporalidad-image"
+          src="/img/temporalidad.png"
+          alt={i18n.app.temporalityImageAlt}
+          width="1116"
+          height="618"
+          decoding="async"
+        />
+      }
     >
       <div className="stack">
         <button className="primary-button" onClick={() => handleSelect('past')}>

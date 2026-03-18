@@ -6,6 +6,17 @@ import { getEvaluationFeedback } from '../domain/formatters'
 import { i18n } from '../i18n'
 import { useSessionContext } from '../state/useSessionContext'
 
+function getFeedbackImageDimensions(src: string) {
+  switch (src) {
+    case '/img/feedback-low.png':
+      return { width: 421, height: 425 }
+    case '/img/feedback-medium.png':
+      return { width: 425, height: 405 }
+    default:
+      return { width: 393, height: 385 }
+  }
+}
+
 export function EvaluationFeedbackPage() {
   const navigate = useNavigate()
   const { currentSession, recordAttempt } = useSessionContext()
@@ -15,10 +26,20 @@ export function EvaluationFeedbackPage() {
   }
 
   const feedback = getEvaluationFeedback(currentSession.finalIntensity)
+  const feedbackImageDimensions = getFeedbackImageDimensions(feedback.imageSrc)
 
   return (
     <ScreenShell
-      headerTop={<img className="temporalidad-image" src={feedback.imageSrc} alt={i18n.pages.evaluation.feedbackImageAlt} />}
+      headerTop={
+        <img
+          className="temporalidad-image"
+          src={feedback.imageSrc}
+          alt={i18n.pages.evaluation.feedbackImageAlt}
+          width={feedbackImageDimensions.width}
+          height={feedbackImageDimensions.height}
+          decoding="async"
+        />
+      }
     >
       <div className="stack">
         <RichText className="summary-text" html={feedback.text} />

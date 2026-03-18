@@ -103,12 +103,6 @@ export function HistoryPage() {
         ) : (
           <>
             <section className="history-overview" aria-labelledby="history-progress-title">
-              <div className="history-overview-header">
-                <div>
-                  <h2 id="history-progress-title">{i18n.pages.history.progressTitle}</h2>
-                  <p>{i18n.pages.history.progressSummary}</p>
-                </div>
-              </div>
 
               <section className="history-score-card" aria-label={i18n.pages.history.scoreCardLabel}>
                 <div>
@@ -205,7 +199,8 @@ export function HistoryPage() {
                     )
                   })}
                 </svg>
-                <p className="history-chart-caption">{i18n.pages.history.chartCaption}</p>
+                <p className="history-chart-caption">
+                  {i18n.pages.history.chartCaption}</p>
               </div>
             </section>
 

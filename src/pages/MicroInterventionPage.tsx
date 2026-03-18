@@ -50,7 +50,16 @@ export function MicroInterventionPage() {
   return (
     <ScreenShell
       title={i18n.pages.microIntervention.title}
-      headerTop={<img className="temporalidad-image" src="/img/pausa.png" alt={i18n.app.pauseImageAlt} />}
+      headerTop={
+        <img
+          className="temporalidad-image"
+          src="/img/pausa.png"
+          alt={i18n.app.pauseImageAlt}
+          width="1521"
+          height="646"
+          decoding="async"
+        />
+      }
     >
       <div className="stack">
         <audio ref={endBellRef} src={endBellPath} preload="auto" />

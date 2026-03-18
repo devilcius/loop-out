@@ -18,7 +18,16 @@ export function AttentionCheckPage() {
   return (
     <ScreenShell
       title={i18n.pages.attentionCheck.title}
-      headerTop={<img className="temporalidad-image" src="/img/atencion.png" alt={i18n.app.attentionImageAlt} />}
+      headerTop={
+        <img
+          className="temporalidad-image"
+          src="/img/atencion.png"
+          alt={i18n.app.attentionImageAlt}
+          width="953"
+          height="572"
+          decoding="async"
+        />
+      }
     >
       <div className="stack">
         <button className="primary-button" onClick={() => handleSelect('yes')}>

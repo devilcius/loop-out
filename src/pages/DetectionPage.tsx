@@ -34,7 +34,14 @@ export function DetectionPage() {
       headerTop={
         <div className="app-hero">
           <h2 className="app-title">{i18n.app.name}</h2>
-          <img className="app-logo" src="/img/logo.png" alt={i18n.app.logoAlt} />
+          <img
+            className="app-logo"
+            src="/img/logo.png"
+            alt={i18n.app.logoAlt}
+            width="453"
+            height="377"
+            decoding="async"
+          />
           <RichText className="app-tagline" html={i18n.app.tagline} />
         </div>
       }

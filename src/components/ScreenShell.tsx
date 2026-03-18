@@ -30,7 +30,14 @@ export function ScreenShell({
         <header className="screen-header">
           {showHomeLogoLink ? (
             <Link className="screen-home-logo-link" to="/" aria-label={i18n.common.backToStart}>
-              <img className="screen-home-logo" src="/img/logo.png" alt={i18n.app.logoAlt} />
+              <img
+                className="screen-home-logo"
+                src="/img/logo.png"
+                alt={i18n.app.logoAlt}
+                width="453"
+                height="377"
+                decoding="async"
+              />
             </Link>
           ) : null}
           {headerTop}

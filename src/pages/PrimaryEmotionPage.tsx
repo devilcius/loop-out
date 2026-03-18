@@ -12,7 +12,14 @@ export function PrimaryEmotionPage() {
     <ScreenShell
       title={i18n.pages.primaryEmotion.title}
       headerTop={
-        <img className="temporalidad-image" src="/img/emocion-principal.png" alt={i18n.app.primaryEmotionImageAlt} />
+        <img
+          className="temporalidad-image"
+          src="/img/emocion-principal.png"
+          alt={i18n.app.primaryEmotionImageAlt}
+          width="994"
+          height="728"
+          decoding="async"
+        />
       }
     >
       <div className="option-grid" role="radiogroup" aria-label={i18n.pages.primaryEmotion.radioAriaLabel}>

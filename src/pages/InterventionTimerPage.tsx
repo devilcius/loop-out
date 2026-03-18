@@ -92,7 +92,16 @@ export function InterventionTimerPage() {
     <>
       <ScreenShell
         title={i18n.pages.interventionTimer.title}
-        headerTop={<img className="temporalidad-image" src="/img/intervencion-pausa.png" alt={i18n.app.interventionPauseImageAlt} />}
+        headerTop={
+          <img
+            className="temporalidad-image"
+            src="/img/intervencion-pausa.png"
+            alt={i18n.app.interventionPauseImageAlt}
+            width="1531"
+            height="678"
+            decoding="async"
+          />
+        }
       >
         <div className="stack">
           <audio ref={endBellRef} src={endBellPath} preload="auto" />

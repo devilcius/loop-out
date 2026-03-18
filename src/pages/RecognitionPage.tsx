@@ -13,7 +13,16 @@ export function RecognitionPage() {
   return (
     <ScreenShell
       title={i18n.pages.recognition.title}
-      headerTop={<img className="temporalidad-image" src="/img/reconocimiento.png" alt={i18n.app.recognitionImageAlt} />}
+      headerTop={
+        <img
+          className="temporalidad-image"
+          src="/img/reconocimiento.png"
+          alt={i18n.app.recognitionImageAlt}
+          width="646"
+          height="460"
+          decoding="async"
+        />
+      }
     >
       <div className="stack">
         <RichText
