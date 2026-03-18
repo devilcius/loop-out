@@ -1,14 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { registerSW } from 'virtual:pwa-register'
 import App from './App'
 import './styles/base.css'
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    void navigator.serviceWorker.register('/service-worker.js').catch(() => {
-      // Keep app functional even if service worker registration fails.
-    })
-  })
+if (import.meta.env.PROD) {
+  registerSW({ immediate: true })
 }
 
 createRoot(document.getElementById('root')!).render(
