@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.10.1] - 2026-03-18
+
+### Navigation
+- Smoother transition between steps
+
 ## [0.10.0] - 2026-03-18
 
 ### History graphs
