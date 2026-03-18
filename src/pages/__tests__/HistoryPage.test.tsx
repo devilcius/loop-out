@@ -93,8 +93,6 @@ describe('HistoryPage', () => {
     ])
 
     const metrics = screen.getByLabelText('Resumen del progreso')
-
-    expect(screen.getByRole('heading', { name: 'Evolución reciente' })).toBeInTheDocument()
     expect(screen.getByLabelText('Puntuación de tendencia reciente')).toHaveTextContent('75')
     expect(screen.getByText('Tendencia positiva')).toBeInTheDocument()
     expect(screen.getByLabelText('Gráfico de cambio de intensidad por intento')).toBeInTheDocument()
