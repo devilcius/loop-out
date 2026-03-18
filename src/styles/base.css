@@ -320,12 +320,219 @@ button,
   padding: 0.9rem;
 }
 
+.history-overview {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--brand-teal) 12%, white), color-mix(in srgb, white 94%, var(--brand-ochre)));
+  border: 1px solid color-mix(in srgb, var(--brand-teal) 26%, var(--border-soft));
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.history-overview-header {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.history-overview-header h2 {
+  color: var(--brand-deep);
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+.history-overview-header p {
+  color: color-mix(in srgb, var(--brand-deep) 74%, #4f5852);
+  margin: 0.3rem 0 0;
+}
+
+.history-score-card {
+  align-items: end;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--brand-deep) 90%, white 10%), color-mix(in srgb, var(--brand-teal) 82%, #183138));
+  border-radius: 0.95rem;
+  color: #f4faf8;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  margin-top: 0.95rem;
+  padding: 1rem;
+}
+
+.history-score-eyebrow {
+  color: color-mix(in srgb, white 82%, var(--brand-ochre));
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.history-score-main {
+  align-items: baseline;
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.2rem;
+}
+
+.history-score-value {
+  font-size: clamp(2.4rem, 4vw, 3.1rem);
+  line-height: 0.95;
+}
+
+.history-score-scale {
+  color: color-mix(in srgb, white 72%, var(--brand-ochre));
+  font-size: 0.95rem;
+}
+
+.history-score-label {
+  color: color-mix(in srgb, white 92%, var(--brand-ochre) 8%);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.4rem 0 0;
+}
+
+.history-score-meter {
+  align-self: center;
+}
+
+.history-score-meter-track {
+  background: rgb(255 255 255 / 16%);
+  border-radius: 999px;
+  height: 0.85rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.history-score-meter-fill {
+  background: linear-gradient(90deg, #c24c43 0%, var(--brand-ochre) 48%, #2f8f63 100%);
+  border-radius: inherit;
+  height: 100%;
+}
+
+.history-score-meter-scale {
+  color: rgb(255 255 255 / 78%);
+  display: flex;
+  font-size: 0.82rem;
+  justify-content: space-between;
+  margin-top: 0.45rem;
+}
+
+.history-metrics {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0.95rem;
+}
+
+.history-metric-card {
+  background: rgb(255 255 255 / 65%);
+  border: 1px solid color-mix(in srgb, var(--brand-teal) 18%, transparent);
+  border-radius: 0.85rem;
+  display: grid;
+  gap: 0.2rem;
+  min-height: 5.1rem;
+  padding: 0.8rem;
+}
+
+.history-metric-card strong {
+  color: var(--brand-deep);
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.history-metric-card span {
+  color: color-mix(in srgb, var(--brand-deep) 76%, #535c56);
+  font-size: 0.92rem;
+}
+
+.history-chart-card {
+  margin-top: 0.95rem;
+}
+
+.history-chart {
+  display: block;
+  height: auto;
+  overflow: visible;
+  width: 100%;
+}
+
+.history-chart-axis,
+.history-chart-grid {
+  stroke-linecap: round;
+}
+
+.history-chart-grid {
+  stroke: color-mix(in srgb, var(--brand-deep) 10%, transparent);
+  stroke-width: 1;
+}
+
+.history-chart-baseline {
+  stroke: color-mix(in srgb, var(--brand-deep) 46%, var(--border-soft));
+  stroke-dasharray: 5 6;
+  stroke-linecap: round;
+  stroke-width: 1.4;
+}
+
+.history-chart-line {
+  fill: none;
+  stroke: color-mix(in srgb, var(--brand-deep) 60%, #5a746d);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.history-chart-guide {
+  stroke: color-mix(in srgb, var(--brand-deep) 14%, transparent);
+  stroke-dasharray: 3 5;
+  stroke-width: 1.2;
+}
+
+.history-chart-point {
+  stroke: var(--bg-card);
+  stroke-width: 2;
+}
+
+.history-chart-point-improved {
+  fill: #2f8f63;
+}
+
+.history-chart-point-worsened {
+  fill: #c24c43;
+}
+
+.history-chart-point-neutral {
+  fill: color-mix(in srgb, var(--brand-deep) 40%, #8b948e);
+}
+
+.history-chart-label {
+  fill: color-mix(in srgb, var(--brand-deep) 68%, #5d655f);
+  font-size: 12px;
+}
+
+.history-chart-label-attempt {
+  fill: color-mix(in srgb, var(--brand-deep) 76%, #445049);
+}
+
+.history-chart-caption {
+  color: color-mix(in srgb, var(--brand-deep) 72%, #505852);
+  font-size: 0.92rem;
+  margin: 0.55rem 0 0;
+}
+
 .history-card p {
   margin: 0 0 0.4rem;
 }
 
 .history-card p:last-child {
   margin-bottom: 0;
+}
+
+@media (max-width: 560px) {
+  .history-score-card {
+    grid-template-columns: 1fr;
+  }
+
+  .history-metrics {
+    grid-template-columns: 1fr;
+  }
 }
 
 .about-content {
