@@ -1,13 +1,17 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ScreenShell } from '../components/ScreenShell'
-import { relatedFeelingsOptions, stepPathByNumber } from '../domain/content'
+import { getRelatedFeelingsOptions, stepPathByNumber } from '../domain/content'
 import { i18n } from '../i18n'
 import { useSessionContext } from '../state/useSessionContext'
 
 export function RelatedFeelingsPage() {
   const navigate = useNavigate()
   const { currentSession, setRelatedFeelings, goToStep } = useSessionContext()
+  const availableFeelings = useMemo(
+    () => getRelatedFeelingsOptions(currentSession.primaryEmotion),
+    [currentSession.primaryEmotion],
+  )
   const [selectedFeelings, setSelectedFeelings] = useState<string[]>(currentSession.relatedFeelings)
 
   const canContinue = useMemo(() => selectedFeelings.length > 0, [selectedFeelings])
@@ -24,7 +28,7 @@ export function RelatedFeelingsPage() {
     <ScreenShell title={i18n.pages.relatedFeelings.title} subtitle={i18n.pages.relatedFeelings.subtitle}>
       <div className="stack">
         <div className="option-grid" role="group" aria-label={i18n.pages.relatedFeelings.groupAriaLabel}>
-          {relatedFeelingsOptions.map((feeling) => {
+          {availableFeelings.map((feeling) => {
             const isSelected = selectedFeelings.includes(feeling)
 
             return (

@@ -39,7 +39,8 @@ describe('SessionProvider', () => {
 
     expect(result.current.currentSession.initialIntensity).toBe(4)
     expect(result.current.currentSession.temporalOrientation).toBe('past')
-    expect(result.current.currentSession.primaryEmotion).toBe('Ansiedad')
+    expect(result.current.currentSession.primaryEmotion).toBe('Miedo')
+    expect(result.current.currentSession.relatedFeelings).toEqual(['Inquietud'])
     expect(result.current.attemptsHistory).toHaveLength(1)
   })
 
@@ -76,7 +77,7 @@ describe('SessionProvider', () => {
     act(() => {
       result.current.setInitialIntensity(4)
       result.current.setTemporalOrientation('future')
-      result.current.setPrimaryEmotion('Ansiedad')
+      result.current.setPrimaryEmotion('Miedo')
       result.current.setRelatedFeelings(['Inquietud'])
       result.current.setNotificationOpened('no')
       result.current.addIntervention('breathe')
@@ -88,5 +89,23 @@ describe('SessionProvider', () => {
     expect(result.current.attemptsHistory).toHaveLength(1)
     expect(result.current.attemptsHistory[0].initialIntensity).toBe(4)
     expect(result.current.attemptsHistory[0].finalIntensity).toBe(2)
+  })
+
+  it('clears related feelings when the primary emotion changes', () => {
+    const { result } = renderHook(() => useSessionContext(), { wrapper })
+
+    act(() => {
+      result.current.setPrimaryEmotion('Miedo')
+      result.current.setRelatedFeelings(['Inquietud'])
+    })
+
+    expect(result.current.currentSession.relatedFeelings).toEqual(['Inquietud'])
+
+    act(() => {
+      result.current.setPrimaryEmotion('Rabia')
+    })
+
+    expect(result.current.currentSession.primaryEmotion).toBe('Rabia')
+    expect(result.current.currentSession.relatedFeelings).toEqual([])
   })
 })

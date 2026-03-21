@@ -22,6 +22,14 @@ export const intensityLabelByLevel: Record<number, string> = {
 
 export const emotionOptions = i18n.domain.emotionOptions
 
-export const relatedFeelingsOptions = i18n.domain.relatedFeelingsOptions
+export const relatedFeelingsOptionsByEmotion: Record<string, string[]> = i18n.domain.relatedFeelingsOptionsByEmotion
+
+export function getRelatedFeelingsOptions(primaryEmotion: string | null): string[] {
+  if (!primaryEmotion) {
+    return []
+  }
+
+  return relatedFeelingsOptionsByEmotion[primaryEmotion] ?? []
+}
 
 export const interventionContent: Record<InterventionOption, InterventionContentItem> = i18n.domain.interventionContent

@@ -46,7 +46,7 @@ describe('PrimaryEmotionPage', () => {
     const continueButton = screen.getByRole('button', { name: 'Continuar' })
     expect(continueButton).toBeDisabled()
 
-    await user.click(screen.getByRole('button', { name: 'Ansiedad' }))
+    await user.click(screen.getByRole('button', { name: 'Miedo' }))
 
     expect(continueButton).toBeEnabled()
     expect(setPrimaryEmotion).not.toHaveBeenCalled()
@@ -55,7 +55,7 @@ describe('PrimaryEmotionPage', () => {
 
     await user.click(continueButton)
 
-    expect(setPrimaryEmotion).toHaveBeenCalledWith('Ansiedad')
+    expect(setPrimaryEmotion).toHaveBeenCalledWith('Miedo')
     expect(goToStep).toHaveBeenCalledWith(5)
     expect(screen.getByText('Related feelings page')).toBeInTheDocument()
   })

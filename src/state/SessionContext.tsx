@@ -91,9 +91,20 @@ function reducer(state: SessionState, action: SessionAction): SessionState {
         currentSession: updateSession(state.currentSession, { temporalOrientation: action.payload }, 3),
       }
     case 'set-primary-emotion':
+      if (state.currentSession.primaryEmotion === action.payload) {
+        return {
+          ...state,
+          currentSession: updateSession(state.currentSession, { primaryEmotion: action.payload }, 4),
+        }
+      }
+
       return {
         ...state,
-        currentSession: updateSession(state.currentSession, { primaryEmotion: action.payload }, 4),
+        currentSession: updateSession(
+          state.currentSession,
+          { primaryEmotion: action.payload, relatedFeelings: [] },
+          4,
+        ),
       }
     case 'set-related-feelings':
       return {
