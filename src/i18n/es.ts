@@ -45,6 +45,13 @@ export const es = {
       aboutLink: "Sobre LOOP-OUT",
       footerNavAriaLabel: "Navegación secundaria",
     },
+    updateNotice: {
+      title: "Hay una nueva versión disponible",
+      text: "Si estás conectado a internet, puedes actualizar la app para aplicar los últimos cambios.",
+      updateAction: "Actualizar",
+      updating: "Actualizando...",
+      dismissAction: "Ahora no",
+    },
   },
   domain: {
     intensityLabelByLevel: {

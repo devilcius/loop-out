@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { AppRouter } from './app/AppRouter'
 import { InstallNotice } from './components/InstallNotice'
+import { UpdateNotice } from './components/UpdateNotice'
 import { SessionProvider } from './state/SessionContext'
 
 const PRELOADED_IMAGE_SOURCES = [
@@ -36,6 +37,7 @@ export default function App() {
     <SessionProvider>
       <AppRouter />
       <InstallNotice />
+      <UpdateNotice />
     </SessionProvider>
   )
 }
