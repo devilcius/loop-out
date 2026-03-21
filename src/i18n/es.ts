@@ -346,7 +346,7 @@ export const es = {
           "los datos se guardan solo en tu propio navegador",
           "no necesitas crear una cuenta",
           "no se envía tu historial personal a ningún servidor",
-          "funciona en modo offline después de la primera carga",
+          "funciona en modo avión después de la primera carga",
         ],
         closing: "El objetivo es reducir la exposición de datos que no sea estrictamente necesaria.",
       },
