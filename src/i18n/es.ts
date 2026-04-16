@@ -44,6 +44,7 @@ export const es = {
       historyLink: "Ver historial",
       aboutLink: "Sobre LOOP-OUT",
       footerNavAriaLabel: "Navegación secundaria",
+      versionLabel: (version: string) => `Versión ${version}`,
     },
     updateNotice: {
       title: "Hay una nueva versión disponible",

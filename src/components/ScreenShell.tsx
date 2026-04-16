@@ -22,7 +22,7 @@ export function ScreenShell({
   showAboutLink = false,
   children,
 }: ScreenShellProps) {
-  const shouldShowFooter = showHistoryLink || showAboutLink
+  const appVersion = `v${__APP_VERSION__}`
 
   return (
     <main className="screen">
@@ -47,8 +47,8 @@ export function ScreenShell({
         <section className="screen-content">{children}</section>
       </div>
 
-      {shouldShowFooter ? (
-        <footer className="screen-footer">
+      <footer className="screen-footer">
+        {showHistoryLink || showAboutLink ? (
           <nav className="screen-footer-links" aria-label={i18n.components.screenShell.footerNavAriaLabel}>
             {showHistoryLink ? (
               <Link to="/history" className="text-link">
@@ -61,8 +61,11 @@ export function ScreenShell({
               </Link>
             ) : null}
           </nav>
-        </footer>
-      ) : null}
+        ) : null}
+        <span className="screen-footer-version" aria-label={i18n.components.screenShell.versionLabel(appVersion)}>
+          {appVersion}
+        </span>
+      </footer>
     </main>
   )
 }
