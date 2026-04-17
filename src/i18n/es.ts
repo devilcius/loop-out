@@ -4,6 +4,7 @@ import type {
   NotificationOpenedAnswer,
   TemporalOrientation,
 } from "../domain/types";
+import type { I18nDictionary } from './types'
 
 const interventionOrder: InterventionOption[] = [
   "feel-present",
@@ -13,7 +14,7 @@ const interventionOrder: InterventionOption[] = [
   "name-the-experience",
 ];
 
-export const es = {
+export const es: I18nDictionary = {
   app: {
     name: "LOOP-OUT",
     logoAlt: "Loop-Out logo",
@@ -45,6 +46,14 @@ export const es = {
       aboutLink: "Sobre LOOP-OUT",
       footerNavAriaLabel: "Navegación secundaria",
       versionLabel: (version: string) => `Versión ${version}`,
+    },
+    installNotice: {
+      title: "Instala LOOP-OUT para usarla como app",
+      installPrompt: "Accede más rápido y vuelve al flujo con un solo toque desde la pantalla de inicio.",
+      iosInstructions: "En iPhone abre Compartir y toca <strong>Añadir a pantalla de inicio</strong>.",
+      installAction: "Instalar",
+      dismissAction: "Ahora no",
+      dontShowAgainAction: "No volver a mostrar",
     },
     updateNotice: {
       title: "Hay una nueva versión disponible",

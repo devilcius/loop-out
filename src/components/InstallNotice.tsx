@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { i18n } from '../i18n'
 
 type InstallChoiceOutcome = 'accepted' | 'dismissed'
 
@@ -123,27 +124,26 @@ export function InstallNotice() {
 
   return (
     <aside className="install-notice" role="status" aria-live="polite">
-      <p className="install-notice-title">Instala LOOP-OUT para usarla como app</p>
+      <p className="install-notice-title">{i18n.components.installNotice.title}</p>
       {showInstallButton ? (
-        <p className="install-notice-text">
-          Accede más rápido y vuelve al flujo con un solo toque desde la pantalla de inicio.
-        </p>
+        <p className="install-notice-text">{i18n.components.installNotice.installPrompt}</p>
       ) : (
-        <p className="install-notice-text">
-          En iPhone abre Compartir y toca <strong>Añadir a pantalla de inicio</strong>.
-        </p>
+        <p
+          className="install-notice-text"
+          dangerouslySetInnerHTML={{ __html: i18n.components.installNotice.iosInstructions }}
+        />
       )}
       <div className="install-notice-actions">
         {showInstallButton ? (
           <button type="button" className="primary-button install-notice-button" onClick={handleInstall}>
-            Instalar
+            {i18n.components.installNotice.installAction}
           </button>
         ) : null}
         <button type="button" className="secondary-button install-notice-button" onClick={handleNotNow}>
-          Ahora no
+          {i18n.components.installNotice.dismissAction}
         </button>
         <button type="button" className="text-button install-notice-button" onClick={handleDontShow}>
-          No volver a mostrar
+          {i18n.components.installNotice.dontShowAgainAction}
         </button>
       </div>
     </aside>
