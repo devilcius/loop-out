@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-04-17
+
+### i18n
+- Autodetects language with English default.
+
+### UX
+- App version in footer
+
+## [1.0.0] - 2026-03-21
+
+### Flow
+- Hierarchical emotions/feelings
+
 ## [1.0.1] - 2026-04-09
 
 ### UX
